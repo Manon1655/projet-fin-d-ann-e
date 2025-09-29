@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Natura Livres</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Natura <span>Livres</span></div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Catégories</a>
+            <a href="#">Nouveautés</a>
+            <a href="#">Best-sellers</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher un livre...">
+        </div>
+        <div class="icons">
+            <span class="fav"></span>
+            <span class="cart"></span>
+            <span class="user"></span>
+        </div>
+    </header>
+
+    <!-- Bannière -->
+    <section class="banner">
+        <h2>L'univers des livres en harmonie avec la nature</h2>
+        <p>Explorez notre collection de livres soigneusement cultivés comme un jardin littéraire...</p>
+        <form>
+            <input type="text" placeholder="Titre, auteur, ISBN...">
+            <button type="submit">Rechercher</button>
+        </form>
+        <div class="popular-search">
+            <span>Paulo Coelho</span>
+            <span>Harry Potter</span>
+            <span>Science-fiction</span>
+            <span>Manga</span>
+        </div>
+    </section>
+
+    <!-- Recommandations -->
+    <section class="reco">
+        <h3>Sélections spéciales</h3>
+        <p>Découvrez nos recommandations</p>
+        <div class="book-list">
+            <!-- Utilise un composant book-card.html pour chaque livre -->
+            <!-- Exemple -->
+            <div class="book-card">
+                <img src="../assets/images/alchimiste.jpg" alt="L'Alchimiste">
+                <div class="badge best-seller">Best-seller</div>
+                <div class="info">
+                    <span class="genre">Roman</span>
+                    <h4>L'Alchimiste</h4>
+                    <span class="author">Paulo Coelho</span>
+                    <div class="rating">★★★★☆ (2341)</div>
+                    <div class="price"><span class="promo">22.90€</span> 18.90€</div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            <!-- Répéter pour chaque livre -->
+        </div>
+    </section>
+
+    <!-- Nos livres -->
+    <section class="collection">
+        <h3>Nos livres</h3>
+        <p>16 livres dans notre collection</p>
+        <div class="book-grid">
+            <!-- Répéter book-card pour chaque livre -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Natura Livres. Tous droits réservés.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

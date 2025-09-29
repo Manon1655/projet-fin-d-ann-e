@@ -1,0 +1,33 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f9f7;
+    margin: 0;
+    color: #2d3a2e;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+.logo { font-weight: bold; font-size: 1.5rem; color: #3d5c36; }
+.logo span { color: #7ca982; }
+nav a { margin: 0 1rem; color: #3d5c36; text-decoration: none; }
+.search-bar input { padding: 0.5rem; border-radius: 8px; border: 1px solid #cfd8cf; }
+.banner { text-align: center; padding: 3rem 1rem; background: #f3f6f3; }
+.banner h2 { font-size: 2.5rem; color: #3d5c36; }
+.banner form { margin: 1.5rem 0; }
+.banner button { background: #3d5c36; color: #fff; border: none; padding: 0.7rem 2rem; border-radius: 8px; }
+.book-list, .book-grid { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+.book-card { background: #fff; border-radius: 16px; box-shadow: 0 2px 8px #e0e0e0; width: 220px; padding: 1rem; position: relative; }
+.book-card img { width: 100%; border-radius: 12px; }
+.badge.best-seller { position: absolute; top: 1rem; left: 1rem; background: orange; color: #fff; padding: 0.2rem 0.7rem; border-radius: 8px; font-size: 0.9rem; }
+.info { margin-top: 1rem; }
+.genre { background: #e8f5e9; color: #3d5c36; border-radius: 8px; padding: 0.2rem 0.7rem; font-size: 0.8rem; }
+.rating { color: #fbc02d; margin: 0.5rem 0; }
+.price { font-weight: bold; color: #3d5c36; }
+.price .promo { text-decoration: line-through; color: #bdbdbd; margin-right: 0.5rem; }
+.book-card button { background: #3d5c36; color: #fff; border: none; padding: 0.5rem 1.5rem; border-radius: 8px; margin-top: 0.5rem; cursor: pointer; }
+footer { text-align: center; padding: 2rem 0; background: #e8f5e9; color: #3d5c36; margin-top: 2rem; }
