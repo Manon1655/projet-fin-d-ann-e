@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Natura Livres</title>
+    <title>Ombrelune</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">Natura <span>Livres</span></div>
-        <nav>
-            <a href="#">Accueil</a>
-            <a href="#">Catégories</a>
-            <a href="#">Nouveautés</a>
-            <a href="#">Best-sellers</a>
-        </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Rechercher un livre...">
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/images/2.png" alt="Ombrelune" style="height:50px;">
+            <span
+                style="font-family: 'Merriweather', serif; font-size: 2rem; font-weight: bold; color: #A8BFA2; letter-spacing:2px;">Ombrelune</span>
         </div>
-        <div class="icons">
-            <span class="fav"></span>
-            <span class="cart"></span>
-            <span class="user"></span>
+        <nav style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    background: #A8BFA2;
+    padding: 10px 0;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 2px 8px #c1a78f22;
+    backdrop-filter: blur(2px);
+    font-size: 0.98rem;
+    margin: 0 auto;
+    width: fit-content;
+    position: relative;
+">
+            <a href="index.html"
+                style="color: #fff; font-family: 'Merriweather', serif; font-size: 1rem; text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s;"
+                onmouseover="this.style.background='#c1a78f';this.style.color='#fffbe9'"
+                onmouseout="this.style.background='';this.style.color='#fff'">Accueil</a>
+            <div style="position: relative;">
+                <a id="categories-link"
+                    style="color: #fff; font-family: 'Merriweather', serif; font-size: 1rem; text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s;"
+                    tabindex="0" onmouseover="this.style.background='#c1a78f';this.style.color='#fffbe9'"
+                    onmouseout="this.style.background='';this.style.color='#fff'">Catégories &#9662;</a>
+                <div id="categories-dropdown"
+                    style="display:none; position:absolute; left:0; top:38px; background:#fff; border-radius:10px; box-shadow:0 4px 16px #4e453c33; min-width:180px; z-index:100;">
+                    <a href="categories/categorie-roman.html"
+                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Roman</a>
+                    <a href="categories/categorie-science-fiction.html"
+                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Science-Fiction</a>
+                    <a href="categories/categorie-fantasy.html"
+                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Fantasy</a>
+                    <a href="categories/categorie-thriller.html"
+                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Thriller</a>
+                    <a href="categories/categorie-classique.html"
+                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Classique</a>
+                </div>
+            </div>
+            <a href="nouveautes.html"
+                style="color: #fff; font-family: 'Merriweather', serif; font-size: 1rem; text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s;"
+                onmouseover="this.style.background='#c1a78f';this.style.color='#fffbe9'"
+                onmouseout="this.style.background='';this.style.color='#fff'">Nouveautés</a>
+            <a href="best-sellers.html"
+                style="color: #fff; font-family: 'Merriweather', serif; font-size: 1rem; text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s;"
+                onmouseover="this.style.background='#c1a78f';this.style.color='#fffbe9'"
+                onmouseout="this.style.background='';this.style.color='#fff'">Best-sellers</a>
+        </nav>
+        <div class="header-icons" style="display: flex; align-items: center; gap: 22px; margin-left: auto;">
+            <!-- Icône Coup de coeur -->
+            <a href="coups-de-coeur.html" id="heart-fav"
+                style="position: relative; cursor: pointer; display: flex; align-items: center;">
+                <img src="assets/images/coeur.png" alt="Coup de coeur"
+                    style="height: 20px; filter: grayscale(0.2); transition: filter 0.2s;">
+                <span id="fav-count"
+                    style="position: absolute; top: -7px; right: -7px; background: #c1a78f; color: #fff; font-size: 0.85em; border-radius: 50%; padding: 2px 7px; min-width: 18px; text-align: center; display: none;">0</span>
+            </a>
+            <!-- Icône Panier -->
+            <a href="panier.html" id="cart"
+                style="position: relative; cursor: pointer; display: flex; align-items: center;">
+                <img src="assets/images/panier.png" alt="Panier" style="height: 20px;">
+                <span id="cart-count"
+                    style="position: absolute; top: -7px; right: -7px; background: #7bb77b; color: #fff; font-size: 0.85em; border-radius: 50%; padding: 2px 7px; min-width: 18px; text-align: center; display: none;">0</span>
+            </a>
+            <!-- Icône Utilisateur -->
+            <a href="profil.html" id="user-profile"
+                style="position: relative; cursor: pointer; display: flex; align-items: center;">
+                <img src="assets/images/user.png" alt="Profil utilisateur" style="height: 20px;">
+            </a>
         </div>
     </header>
 
     <!-- Bannière -->
-    <section class="banner">
+    <section class="banner"
+        style="background: linear-gradient(rgba(243,237,226,0.85), rgba(243,237,226,0.85)), url('assets/images/b1ffdf3d529ef70ec3ab4c64056d61df.jpg') center/cover no-repeat;">
         <h2>L'univers des livres en harmonie avec la nature</h2>
         <p>Explorez notre collection de livres soigneusement cultivés comme un jardin littéraire...</p>
         <form>
@@ -40,14 +102,74 @@
             <span>Manga</span>
         </div>
     </section>
+    <!-- Recommandations Carousel -->
+    <section>
+        <h3 style="text-align:center; font-family:'Merriweather',serif; font-size:2rem; margin-top:2rem;">Nos
+            recommandations</h3>
+        <div class="carousel-container" id="carousel-reco">
+            <button class="carousel-arrow left" aria-label="Précédent">&#8592;</button>
+            <div class="carousel-track">
+                <!-- 10 exemples de cards recommandées -->
+                <div class="book-card">
+                    <img src="assets/images/l'alchimiste.jpg" alt="L'Alchimiste">
+                    <div class="badge best-seller">Best-seller</div>
+                    <div class="info">
+                        <span class="genre">Roman</span>
+                        <h4>L'Alchimiste</h4>
+                        <span class="author">Paulo Coelho</span>
+                        <div class="rating">★★★★☆ (2341)</div>
+                        <div class="price"><span class="promo">22.90€</span> 18.90€</div>
+                        <button class="add-to-cart">Acheter</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="assets/images/dune.jpg" alt="Dune">
+                    <div class="badge best-seller">Best-seller</div>
+                    <div class="info">
+                        <span class="genre">Science-Fiction</span>
+                        <h4>Dune</h4>
+                        <span class="author">Frank Herbert</span>
+                        <div class="rating">★★★★★ (1567)</div>
+                        <div class="price">24.90€</div>
+                        <button class="add-to-cart">Acheter</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="assets/images/le Seigneur des Anneaux.jpg" alt="Le Seigneur des Anneaux">
+                    <div class="badge best-seller">Best-seller</div>
+                    <div class="info">
+                        <span class="genre">Fantasy</span>
+                        <h4>Le Seigneur des Anneaux</h4>
+                        <span class="author">J.R.R. Tolkien</span>
+                        <div class="rating">★★★★★ (6789)</div>
+                        <div class="price"><span class="promo">39.90€</span> 32.90€</div>
+                        <button class="add-to-cart">Acheter</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="assets/images/orgueil.jpg" alt="Orgueil & Préjugés">
+                    <div class="info">
+                        <span class="genre">Classique</span>
+                        <h4>Orgueil & Préjugés</h4>
+                        <span class="author">J.Austen</span>
+                        <div class="rating">★★★★☆ (1200)</div>
+                        <div class="price">15.50€</div>
+                        <button class="add-to-cart">Acheter</button>
+                    </div>
+                </div>
+                <!-- Ajoutez ici d'autres cartes de livres si nécessaire -->
+            </div>
+            <button class="carousel-arrow right" aria-label="Suivant">&#8594;</button>
+        </div>
+        <div class="carousel-nav" id="carousel-nav-reco"></div>
+    </section>
 
-    <!-- Recommandations -->
-    <section class="reco">
-        <h3>Sélections spéciales</h3>
-        <p>Découvrez nos recommandations</p>
-        <div class="book-list">
-            <!-- Utilise un composant book-card.html pour chaque livre -->
-            <!-- Exemple -->
+    <!-- Nos livres -->
+    <section class="collection">
+        <h3>Nos livres</h3>
+        <p>16 livres dans notre collection</p>
+        <div class="book-grid">
+            <!-- Card 1 -->
             <div class="book-card">
                 <img src="../assets/images/alchimiste.jpg" alt="L'Alchimiste">
                 <div class="badge best-seller">Best-seller</div>
@@ -60,23 +182,245 @@
                     <button>Acheter</button>
                 </div>
             </div>
-            <!-- Répéter pour chaque livre -->
-        </div>
-    </section>
-
-    <!-- Nos livres -->
-    <section class="collection">
-        <h3>Nos livres</h3>
-        <p>16 livres dans notre collection</p>
-        <div class="book-grid">
-            <!-- Répéter book-card pour chaque livre -->
+            <!-- Card 2 -->
+            <div class="book-card">
+                <img src="../assets/images/prince.jpg" alt="The Prince">
+                <div class="info">
+                    <span class="genre">Classique</span>
+                    <h4>The Prince</h4>
+                    <span class="author">N. Machiavel</span>
+                    <div class="rating">★★★★☆ (1200)</div>
+                    <div class="price">15.50€</div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="book-card">
+                <img src="../assets/images/stupore.jpg" alt="Stupore e Tremori">
+                <div class="info">
+                    <span class="genre">Roman</span>
+                    <h4>Stupore e Tremori</h4>
+                    <span class="author">Amélie Nothomb</span>
+                    <div class="rating">★★★★☆ (987)</div>
+                    <div class="price">13.90€</div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="book-card">
+                <img src="../assets/images/gonegirl.jpg" alt="Gone Girl">
+                <div class="info">
+                    <span class="genre">Thriller</span>
+                    <h4>Gone Girl</h4>
+                    <span class="author">Gillian Flynn</span>
+                    <div class="rating">★★★★☆ (892)</div>
+                    <div class="price">21.90€</div>
+                    <button>Acheter</button>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Natura Livres. Tous droits réservés.</p>
+    <!-- Footer -->
+    <footer
+        style="background:#A8BFA2; color:#f5f5f5; padding:40px 20px; margin-top:40px; font-family:'Merriweather', serif;">
+        <div
+            style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; gap:30px;">
+
+            <!-- Colonne 1 : Logo + présentation -->
+            <div style="flex:1 1 220px;">
+                <h3 style="color:#c1a78f; margin-bottom:12px;">Ombrelune</h3>
+                <p style="line-height:1.6; font-size:0.95rem;">
+                    Ombrelune, votre librairie en ligne dédiée aux romans, classiques, thrillers, fantasy et plus
+                    encore.
+                    Découvrez un univers littéraire en harmonie avec la nature 🌿.
+                </p>
+            </div>
+
+            <!-- Colonne 2 : Liens utiles -->
+            <div style="flex:1 1 160px;">
+                <h4 style="color:#c1a78f; margin-bottom:12px;">Liens utiles</h4>
+                <ul style="list-style:none; padding:0; margin:0; line-height:1.8; font-size:0.95rem;">
+                    <li><a href="index.html" style="color:#f5f5f5; text-decoration:none;">Accueil</a></li>
+                    <li><a href="nouveautes.html" style="color:#f5f5f5; text-decoration:none;">Nouveautés</a></li>
+                    <li><a href="best-sellers.html" style="color:#f5f5f5; text-decoration:none;">Best-sellers</a></li>
+                    <li><a href="categories/categorie-roman.html"
+                            style="color:#f5f5f5; text-decoration:none;">Catégories</a></li>
+                    <li><a href="contact.html" style="color:#f5f5f5; text-decoration:none;">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Contact -->
+            <div style="flex:1 1 200px;">
+                <h4 style="color:#c1a78f; margin-bottom:12px;">Contact</h4>
+                <p style="margin:6px 0; font-size:0.95rem;">📍 123 Rue des Écrivains, Paris</p>
+                <p style="margin:6px 0; font-size:0.95rem;">📞 +33 1 23 45 67 89</p>
+                <p style="margin:6px 0; font-size:0.95rem;">✉️ contact@ombrelune.fr</p>
+            </div>
+
+            <!-- Colonne 4 : Réseaux sociaux -->
+            <div style="flex:1 1 180px;">
+                <h4 style="color:#c1a78f; margin-bottom:12px;">Suivez-nous</h4>
+                <div style="display:flex; gap:15px; font-size:1.4rem;">
+                    <a href="#" style="color:#f5f5f5; text-decoration:none;">🌐</a>
+                    <a href="#" style="color:#f5f5f5; text-decoration:none;">📘</a>
+                    <a href="#" style="color:#f5f5f5; text-decoration:none;">🐦</a>
+                    <a href="#" style="color:#f5f5f5; text-decoration:none;">📸</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bas du footer -->
+        <div
+            style="text-align:center; margin-top:30px; font-size:0.85rem; border-top:1px solid #555; padding-top:15px;">
+            &copy; 2025 Ombrelune. Tous droits réservés.
+        </div>
     </footer>
+
     <script src="script.js"></script>
+    <script>
+        // Coup de coeur : incrémente le compteur quand on clique sur un coeur de card
+        document.querySelectorAll('.book-card .badge.heart, .book-card .heart-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                let favCount = document.getElementById('fav-count');
+                let count = parseInt(favCount.textContent) || 0;
+                favCount.textContent = count + 1;
+                favCount.style.display = 'inline-block';
+            });
+        });
+
+        // Panier : incrémente le compteur quand on clique sur un bouton "Acheter"
+        document.querySelectorAll('.book-card button, .add-to-cart').forEach(btn => {
+            btn.addEventListener('click', function () {
+                let cartCount = document.getElementById('cart-count');
+                let count = parseInt(cartCount.textContent) || 0;
+                cartCount.textContent = count + 1;
+                cartCount.style.display = 'inline-block';
+            });
+        });
+
+        // Affichage menu profil utilisateur
+        const userProfile = document.getElementById('user-profile');
+        const profileMenu = document.getElementById('profile-menu');
+        userProfile.addEventListener('click', function (e) {
+            e.stopPropagation();
+            profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function () {
+            profileMenu.style.display = 'none';
+        });
+
+        // Dropdown Catégories
+        const catLink = document.getElementById('categories-link');
+        const catDropdown = document.getElementById('categories-dropdown');
+        catLink.addEventListener('mouseover', () => catDropdown.style.display = 'block');
+        catLink.addEventListener('focus', () => catDropdown.style.display = 'block');
+        catLink.addEventListener('mouseout', () => setTimeout(() => catDropdown.style.display = 'none', 200));
+        catDropdown.addEventListener('mouseover', () => catDropdown.style.display = 'block');
+        catDropdown.addEventListener('mouseout', () => catDropdown.style.display = 'none');
+
+        // Pour la section Nouveautés et Best-sellers sur index.html
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sélectionne tous les livres avec le badge nouveauté ou best-seller
+            const nouveautes = Array.from(document.querySelectorAll('.book-card .badge.nouveau')).map(card => card.closest('.book-card'));
+            const bestsellers = Array.from(document.querySelectorAll('.book-card .badge.best-seller')).map(card => card.closest('.book-card'));
+
+            // Ajoute la section Nouveautés si besoin
+            if (nouveautes.length > 0) {
+                let nouveauteSection = document.createElement('section');
+                nouveauteSection.className = 'nouveautes';
+                nouveauteSection.innerHTML = `<h3>Nouveautés</h3><div class="book-list"></div>`;
+                nouveautes.forEach(card => nouveauteSection.querySelector('.book-list').appendChild(card.cloneNode(true)));
+                document.body.insertBefore(nouveauteSection, document.querySelector('.collection'));
+            }
+
+            // Ajoute la section Best-sellers si besoin
+            if (bestsellers.length > 0) {
+                let bestsellerSection = document.createElement('section');
+                bestsellerSection.className = 'bestsellers';
+                bestsellerSection.innerHTML = `<h3>Best-sellers</h3><div class="book-list"></div>`;
+                bestsellers.forEach(card => bestsellerSection.querySelector('.book-list').appendChild(card.cloneNode(true)));
+                document.body.insertBefore(bestsellerSection, document.querySelector('.collection'));
+            }
+        });
+
+        // Carousel Recommandations
+        const carouselReco = document.getElementById('carousel-reco');
+        const carouselTrackReco = carouselReco.querySelector('.carousel-track');
+        const carouselNavReco = document.getElementById('carousel-nav-reco');
+        const slidesToShow = 3;
+        let currentIndex = 0;
+
+        // Crée les points de navigation pour le carousel
+        function createNavDots() {
+            const dotCount = Math.ceil(carouselTrackReco.children.length / slidesToShow);
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                carouselNavReco.appendChild(dot);
+            }
+        }
+
+        // Va à la diapositive spécifiée
+        function goToSlide(index) {
+            const slides = carouselTrackReco.children;
+            const totalSlides = slides.length;
+            const newIndex = (index + totalSlides) % totalSlides;
+            const offset = -newIndex * (100 / slidesToShow);
+            carouselTrackReco.style.transform = `translateX(${offset}%)`;
+            currentIndex = newIndex;
+            updateNavDots();
+        }
+
+        // Met à jour les points de navigation actifs
+        function updateNavDots() {
+            const dots = carouselNavReco.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Gestion des flèches du carousel
+        let isDragging = false;
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+
+        const handleDragStart = (index) => (event) => {
+            isDragging = true;
+            startX = event.clientX;
+        };
+
+        const handleDragMove = (event) => {
+            if (!isDragging) return;
+            const diffX = event.clientX - startX;
+            currentTranslate = prevTranslate + diffX / (carouselReco.offsetWidth / slidesToShow);
+            carouselTrackReco.style.transform = `translateX(${currentTranslate}%)`;
+        };
+
+        const handleDragEnd = () => {
+            isDragging = false;
+            const movedBy = Math.round(currentTranslate - prevTranslate);
+            if (movedBy < -1) {
+                goToSlide(currentIndex + 1);
+            } else if (movedBy > 1) {
+                goToSlide(currentIndex - 1);
+            } else {
+                goToSlide(currentIndex);
+            }
+            prevTranslate = currentTranslate;
+        };
+
+        carouselTrackReco.addEventListener('mousedown', handleDragStart(currentIndex));
+        carouselTrackReco.addEventListener('mousemove', handleDragMove);
+        carouselTrackReco.addEventListener('mouseup', handleDragEnd);
+        carouselTrackReco.addEventListener('mouseleave', handleDragEnd);
+
+        createNavDots();
+    </script>
 </body>
+
 </html>
