@@ -321,3 +321,24 @@ nav a {
         width: 130px;
     }
 }
+
+.popular-search span {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px;
+    background-color: #A8BFA2;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    /* Montre que c'est cliquable */
+    transition: background 0.2s, transform 0.2s;
+    font-weight: 500;
+    font-family: 'Merriweather', serif;
+}
+
+.popular-search span:hover {
+    background-color: #c1a78f;
+    /* couleur au survol */
+    transform: scale(1.05);
+    /* petit effet de zoom au survol */
+}
