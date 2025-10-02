@@ -342,33 +342,3 @@ nav a {
     transform: scale(1.05);
     /* petit effet de zoom au survol */
 }
-
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: linear-gradient(#1a1a1a, #2d1f1f); /* Fond sombre pour l'ambiance */
-    height: 100vh;
-    font-family: sans-serif;
-}
-
-.falling-item {
-    position: absolute;
-    top: -50px;
-    font-size: 24px;
-    pointer-events: none;
-    user-select: none;
-    animation-name: fall;
-    animation-timing-function: linear;
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
