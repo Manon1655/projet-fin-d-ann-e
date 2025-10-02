@@ -336,3 +336,39 @@ document.querySelector(".search-bar").addEventListener("submit", e => {
 
         createNavDots();
 
+
+        // Configuration
+const items = ['🍁', '🍂', '📖']; // Feuilles et livres
+const totalItems = 30; // Nombre d'éléments qui tombent
+
+for (let i = 0; i < totalItems; i++) {
+    const el = document.createElement('div');
+    el.className = 'falling-item';
+    el.textContent = items[Math.floor(Math.random() * items.length)];
+    
+    // Position initiale et taille
+    el.style.left = Math.random() * window.innerWidth + 'px';
+    el.style.fontSize = (16 + Math.random() * 24) + 'px';
+    
+    // Durée et délai aléatoire
+    const duration = 5 + Math.random() * 10; // 5 à 15s
+    const delay = Math.random() * 5; // 0 à 5s
+    el.style.animationDuration = duration + 's';
+    el.style.animationDelay = delay + 's';
+    
+    document.body.appendChild(el);
+    
+    // Refaire tomber l'élément à la fin de l'animation
+    el.addEventListener('animationend', () => {
+        el.style.left = Math.random() * window.innerWidth + 'px';
+        el.style.animationDuration = (5 + Math.random() * 10) + 's';
+        el.style.animationDelay = '0s';
+        el.style.top = '-50px';
+        el.style.opacity = 1;
+        el.style.transform = 'rotate(0deg)';
+        el.style.animationName = 'none';
+        requestAnimationFrame(() => {
+            el.style.animationName = 'fall';
+        });
+    });
+}
