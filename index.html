@@ -1,270 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Ombrelune</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+  <title>Ombrelune</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
-            <img src="assets/images/2.png" alt="Ombrelune" style="height:50px;">
-            <span
-                style="font-family: 'Merriweather', serif; font-size: 2rem; font-weight: bold; color: #A8BFA2; letter-spacing:2px;">Ombrelune</span>
+
+  <!-- Animation fond (feuilles de livres) -->
+  <div class="falling‑books"></div>
+
+  <!-- Header -->
+  <header class="site‑header">
+    <div class="header‑inner">
+      <div class="logo">
+        <img src="assets/images/2.png" alt="Ombrelune">
+        <span class="logo‑text">Ombrelune</span>
+      </div>
+      <nav class="main‑nav">
+        <ul class="nav‑list">
+          <li><a href="index.html">Accueil</a></li>
+          <li class="has‑dropdown">
+            <a href="#" id="categories‑link">Catégories </a>
+            <ul class="dropdown" id="categories‑dropdown">
+              <li><a href="categories/categorie-roman.html">Roman</a></li>
+              <li><a href="categories/categorie-science-fiction.html">Science‑Fiction</a></li>
+              <li><a href="categories/categorie-fantasy.html">Fantasy</a></li>
+              <li><a href="categories/categorie-thriller.html">Thriller</a></li>
+              <li><a href="categories/categorie-classique.html">Classique</a></li>
+            </ul>
+          </li>
+          <li><a href="nouveautes.html">Nouveautés</a></li>
+          <li><a href="best-sellers.html">Best‑sellers</a></li>
+        </ul>
+      </nav>
+      <div class="header‑icons">
+        <a href="coups-de-coeur.html" class="icon icon‑fav">
+          <img src="assets/images/coeur.png" alt="Coup de cœur">
+          <span class="count" id="fav‑count">0</span>
+        </a>
+        <a href="panier.html" class="icon icon‑cart">
+          <img src="assets/images/panier.png" alt="Panier">
+          <span class="count" id="cart‑count">0</span>
+        </a>
+        <a href="profil.html" class="icon icon‑user">
+          <img src="assets/images/user.png" alt="Profil utilisateur">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner / Hero -->
+  <section class="banner">
+    <div class="banner‑content">
+      <h2>L’univers des livres en harmonie avec la nature</h2>
+      <p>Explorez notre collection de livres soigneusement cultivés comme un jardin littéraire…</p>
+      <form class="search‑bar">
+        <input type="text" placeholder="🔎 Titre, auteur, ISBN…">
+        <button type="submit">Rechercher</button>
+      </form>
+      <div class="popular‑search">
+        <a href="#">Paulo Coelho</a>
+        <a href="#">Harry Potter</a>
+        <a href="#">Science‑fiction</a>
+        <a href="#">Manga</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommandations Carousel -->
+  <section class="recommendations">
+    <h3>Nos recommandations</h3>
+    <div class="carousel‑container" id="carousel‑reco">
+      <button class="carousel‑arrow left" aria-label="Précédent">←</button>
+      <div class="carousel‑track">
+        <!-- Exemple carte de livre -->
+        <div class="book‑card">
+          <img src="assets/images/l'alchimiste.jpg" alt="L'Alchimiste">
+          <div class="badge best‑seller">Best‑seller</div>
+          <div class="info">
+            <span class="genre">Roman</span>
+            <h4>L'Alchimiste</h4>
+            <span class="author">Paulo Coelho</span>
+            <div class="rating">★★★★☆ (2341)</div>
+            <div class="price"><span class="promo">22,90 €</span> 18,90 €</div>
+            <button class="add‑to‑cart">Acheter</button>
+          </div>
         </div>
-        <nav style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 28px;
-    background: #A8BFA2;
-    padding: 10px 0;
-    border-radius: 0 0 18px 18px;
-    box-shadow: 0 2px 8px #c1a78f22;
-    backdrop-filter: blur(2px);
-    font-size: 0.98rem;
-    margin: 0 auto;
-    width: fit-content;
-    position: relative;
-">
-            <a href="index.html"
-                style="color: #fff; font-family: 'Merriweather', serif; font-size: 1rem; text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s;"
-                onmouseover="this.style.background='#c1a78f';this.style.color='#fffbe9'"
-                onmouseout="this.style.background='';this.style.color='#fff'">Accueil</a>
-            <div style="position: relative;">
-                <a id="categories-link"
-                    style="color: #fff; font-family: 'Merriweather', serif; font-size: 1rem; text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s;"
-                    tabindex="0" onmouseover="this.style.background='#c1a78f';this.style.color='#fffbe9'"
-                    onmouseout="this.style.background='';this.style.color='#fff'">Catégories &#9662;</a>
-                <div id="categories-dropdown"
-                    style="display:none; position:absolute; left:0; top:38px; background:#fff; border-radius:10px; box-shadow:0 4px 16px #4e453c33; min-width:180px; z-index:100;">
-                    <a href="categories/categorie-roman.html"
-                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Roman</a>
-                    <a href="categories/categorie-science-fiction.html"
-                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Science-Fiction</a>
-                    <a href="categories/categorie-fantasy.html"
-                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Fantasy</a>
-                    <a href="categories/categorie-thriller.html"
-                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Thriller</a>
-                    <a href="categories/categorie-classique.html"
-                        style="display:block; padding:10px 20px; color:#617c55; text-decoration:none; font-family:'Merriweather',serif;">Classique</a>
-                </div>
-            </div>
-            <a href="nouveautes.html"
-                style="color: #fff; font-family: 'Merriweather', serif; font-size: 1rem; text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s;"
-                onmouseover="this.style.background='#c1a78f';this.style.color='#fffbe9'"
-                onmouseout="this.style.background='';this.style.color='#fff'">Nouveautés</a>
-            <a href="best-sellers.html"
-                style="color: #fff; font-family: 'Merriweather', serif; font-size: 1rem; text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s;"
-                onmouseover="this.style.background='#c1a78f';this.style.color='#fffbe9'"
-                onmouseout="this.style.background='';this.style.color='#fff'">Best-sellers</a>
-        </nav>
-        <div class="header-icons" style="display: flex; align-items: center; gap: 22px; margin-left: auto;">
-            <!-- Icône Coup de coeur -->
-            <a href="coups-de-coeur.html" id="heart-fav"
-                style="position: relative; cursor: pointer; display: flex; align-items: center;">
-                <img src="assets/images/coeur.png" alt="Coup de coeur"
-                    style="height: 20px; filter: grayscale(0.2); transition: filter 0.2s;">
-                <span id="fav-count"
-                    style="position: absolute; top: -7px; right: -7px; background: #c1a78f; color: #fff; font-size: 0.85em; border-radius: 50%; padding: 2px 7px; min-width: 18px; text-align: center; display: none;">0</span>
-            </a>
-            <!-- Icône Panier -->
-            <a href="panier.html" id="cart"
-                style="position: relative; cursor: pointer; display: flex; align-items: center;">
-                <img src="assets/images/panier.png" alt="Panier" style="height: 20px;">
-                <span id="cart-count"
-                    style="position: absolute; top: -7px; right: -7px; background: #7bb77b; color: #fff; font-size: 0.85em; border-radius: 50%; padding: 2px 7px; min-width: 18px; text-align: center; display: none;">0</span>
-            </a>
-            <!-- Icône Utilisateur -->
-            <a href="profil.html" id="user-profile"
-                style="position: relative; cursor: pointer; display: flex; align-items: center;">
-                <img src="assets/images/user.png" alt="Profil utilisateur" style="height: 20px;">
-            </a>
+        <!-- Ajouter d'autres cartes ici… -->
+      </div>
+      <button class="carousel‑arrow right" aria-label="Suivant">→</button>
+    </div>
+    <div class="carousel‑nav" id="carousel‑nav‑reco"></div>
+  </section>
+
+  <!-- Collection livres -->
+  <section class="collection">
+    <h3>Nos livres</h3>
+    <p>16 livres dans notre collection</p>
+    <div class="book‑grid">
+      <!-- Exemple carte -->
+      <div class="book‑card">
+        <img src="../assets/images/alchimiste.jpg" alt="L'Alchimiste">
+        <div class="badge best‑seller">Best‑seller</div>
+        <div class="info">
+          <span class="genre">Roman</span>
+          <h4>L'Alchimiste</h4>
+          <span class="author">Paulo Coelho</span>
+          <div class="rating">★★★★☆ (2341)</div>
+          <div class="price"><span class="promo">22,90 €</span> 18,90 €</div>
+          <button>Acheter</button>
         </div>
-    </header>
+      </div>
+      <!-- Autres cartes… -->
+    </div>
+  </section>
 
-    <!-- Bannière -->
-    <section class="banner"
-        style="background: linear-gradient(rgba(243,237,226,0.85), rgba(243,237,226,0.85)), url('assets/images/b1ffdf3d529ef70ec3ab4c64056d61df.jpg') center/cover no-repeat;">
-        <h2>L'univers des livres en harmonie avec la nature</h2>
-        <p>Explorez notre collection de livres soigneusement cultivés comme un jardin littéraire...</p>
-        <form class="search-bar">
-            <input type="text" placeholder="🔎 Titre, auteur, ISBN...">
-            <button type="submit">Rechercher</button>
-        </form>
-
-        <div class="popular-search">
-            <span>Paulo Coelho</span>
-            <span>Harry Potter</span>
-            <span>Science-fiction</span>
-            <span>Manga</span>
+  <!-- Footer -->
+  <footer class="site‑footer">
+    <div class="footer‑inner">
+      <div class="footer‑col">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="nouveautes.html">Nouveautés</a></li>
+          <li><a href="best-sellers.html">Best‑sellers</a></li>
+          <li><a href="categories/categorie-roman.html">Catégories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer‑col">
+        <h4>Contact</h4>
+        <p>📍 123 Rue des Écrivains, Paris</p>
+        <p>📞 +33 1 23 45 67 89</p>
+        <p>✉️ contact@ombrelune.fr</p>
+      </div>
+      <div class="footer‑col">
+        <h4>Suivez‑nous</h4>
+        <div class="social‑links">
+          <a href="#">🌐</a>
+          <a href="#">📘</a>
+          <a href="#">📸</a>
         </div>
-    </section>
-    <!-- Recommandations Carousel -->
-    <section>
-        <h3 style="text-align:center; font-family:'Merriweather',serif; font-size:2rem; margin-top:2rem;">Nos
-            recommandations</h3>
-        <div class="carousel-container" id="carousel-reco">
-            <button class="carousel-arrow left" aria-label="Précédent">&#8592;</button>
-            <div class="carousel-track">
-                <!-- 10 exemples de cards recommandées -->
-                <div class="book-card">
-                    <img src="assets/images/l'alchimiste.jpg" alt="L'Alchimiste">
-                    <div class="badge best-seller">Best-seller</div>
-                    <div class="info">
-                        <span class="genre">Roman</span>
-                        <h4>L'Alchimiste</h4>
-                        <span class="author">Paulo Coelho</span>
-                        <div class="rating">★★★★☆ (2341)</div>
-                        <div class="price"><span class="promo">22.90€</span> 18.90€</div>
-                        <button class="add-to-cart">Acheter</button>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="assets/images/dune.jpg" alt="Dune">
-                    <div class="badge best-seller">Best-seller</div>
-                    <div class="info">
-                        <span class="genre">Science-Fiction</span>
-                        <h4>Dune</h4>
-                        <span class="author">Frank Herbert</span>
-                        <div class="rating">★★★★★ (1567)</div>
-                        <div class="price">24.90€</div>
-                        <button class="add-to-cart">Acheter</button>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="assets/images/le Seigneur des Anneaux.jpg" alt="Le Seigneur des Anneaux">
-                    <div class="badge best-seller">Best-seller</div>
-                    <div class="info">
-                        <span class="genre">Fantasy</span>
-                        <h4>Le Seigneur des Anneaux</h4>
-                        <span class="author">J.R.R. Tolkien</span>
-                        <div class="rating">★★★★★ (6789)</div>
-                        <div class="price"><span class="promo">39.90€</span> 32.90€</div>
-                        <button class="add-to-cart">Acheter</button>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="assets/images/orgueil.jpg" alt="Orgueil & Préjugés">
-                    <div class="info">
-                        <span class="genre">Classique</span>
-                        <h4>Orgueil & Préjugés</h4>
-                        <span class="author">J.Austen</span>
-                        <div class="rating">★★★★☆ (1200)</div>
-                        <div class="price">15.50€</div>
-                        <button class="add-to-cart">Acheter</button>
-                    </div>
-                </div>
-                <!-- Ajoutez ici d'autres cartes de livres si nécessaire -->
-            </div>
-            <button class="carousel-arrow right" aria-label="Suivant">&#8594;</button>
-        </div>
-        <div class="carousel-nav" id="carousel-nav-reco"></div>
-    </section>
+      </div>
+    </div>
+    <div class="footer‑bottom">
+      &copy; 2025 Ombrelune. Tous droits réservés.
+    </div>
+  </footer>
 
-    <!-- Nos livres -->
-    <section class="collection">
-        <h3>Nos livres</h3>
-        <p>16 livres dans notre collection</p>
-        <div class="book-grid">
-            <!-- Card 1 -->
-            <div class="book-card">
-                <img src="../assets/images/alchimiste.jpg" alt="L'Alchimiste">
-                <div class="badge best-seller">Best-seller</div>
-                <div class="info">
-                    <span class="genre">Roman</span>
-                    <h4>L'Alchimiste</h4>
-                    <span class="author">Paulo Coelho</span>
-                    <div class="rating">★★★★☆ (2341)</div>
-                    <div class="price"><span class="promo">22.90€</span> 18.90€</div>
-                    <button>Acheter</button>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="book-card">
-                <img src="../assets/images/prince.jpg" alt="The Prince">
-                <div class="info">
-                    <span class="genre">Classique</span>
-                    <h4>The Prince</h4>
-                    <span class="author">N. Machiavel</span>
-                    <div class="rating">★★★★☆ (1200)</div>
-                    <div class="price">15.50€</div>
-                    <button>Acheter</button>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="book-card">
-                <img src="../assets/images/stupore.jpg" alt="Stupore e Tremori">
-                <div class="info">
-                    <span class="genre">Roman</span>
-                    <h4>Stupore e Tremori</h4>
-                    <span class="author">Amélie Nothomb</span>
-                    <div class="rating">★★★★☆ (987)</div>
-                    <div class="price">13.90€</div>
-                    <button>Acheter</button>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="book-card">
-                <img src="../assets/images/gonegirl.jpg" alt="Gone Girl">
-                <div class="info">
-                    <span class="genre">Thriller</span>
-                    <h4>Gone Girl</h4>
-                    <span class="author">Gillian Flynn</span>
-                    <div class="rating">★★★★☆ (892)</div>
-                    <div class="price">21.90€</div>
-                    <button>Acheter</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer
-        style="background:#A8BFA2; color:#f5f5f5; padding:40px 20px; margin-top:40px; font-family:'Merriweather', serif;">
-        <div
-            style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; gap:30px;">
-
-            <!-- Colonne 2 : Liens utiles -->
-            <div style="flex:1 1 160px;">
-                <h4 style="color:#c1a78f; margin-bottom:12px;">Liens utiles</h4>
-                <ul style="list-style:none; padding:0; margin:0; line-height:1.8; font-size:0.95rem;">
-                    <li><a href="index.html" style="color:#f5f5f5; text-decoration:none;">Accueil</a></li>
-                    <li><a href="nouveautes.html" style="color:#f5f5f5; text-decoration:none;">Nouveautés</a></li>
-                    <li><a href="best-sellers.html" style="color:#f5f5f5; text-decoration:none;">Best-sellers</a></li>
-                    <li><a href="categories/categorie-roman.html" style="color:#f5f5f5; text-decoration:none;">Catégories</a></li>
-                    <li><a href="contact.html" style="color:#f5f5f5; text-decoration:none;">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Colonne 3 : Contact -->
-            <div style="flex:1 1 200px;">
-                <h4 style="color:#c1a78f; margin-bottom:12px;">Contact</h4>
-                <p style="margin:6px 0; font-size:0.95rem;">📍 123 Rue des Écrivains, Paris</p>
-                <p style="margin:6px 0; font-size:0.95rem;">📞 +33 1 23 45 67 89</p>
-                <p style="margin:6px 0; font-size:0.95rem;">✉️ contact@ombrelune.fr</p>
-            </div>
-
-            <!-- Colonne 4 : Réseaux sociaux -->
-            <div style="flex:1 1 180px;">
-                <h4 style="color:#c1a78f; margin-bottom:12px;">Suivez-nous</h4>
-                <div style="display:flex; gap:15px; font-size:1.4rem;">
-                    <a href="#" style="color:#f5f5f5; text-decoration:none;">🌐</a>
-                    <a href="#" style="color:#f5f5f5; text-decoration:none;">📘</a>
-                    <a href="#" style="color:#f5f5f5; text-decoration:none;">📸</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bas du footer -->
-        <div
-            style="text-align:center; margin-top:30px; font-size:0.85rem; border-top:1px solid #555; padding-top:15px;">
-            &copy; 2025 Ombrelune. Tous droits réservés.
-        </div>
-    </footer>
+  <script src="script.js"></script>
 </body>
-
 </html>
